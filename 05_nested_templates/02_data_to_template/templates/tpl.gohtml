@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>The Meaning of Life: {{.}}</h1>
+    
+    <!-- this is how we pass data to a template:  -->
+    <p>{{template "testTemplate" .}}</p>
+    </body>
+</html>
