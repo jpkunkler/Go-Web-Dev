@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- this is how we assign data to a variable in our template -->
+        {{$Wisdom := .}}
+
+        <!-- This is how we use this variable -->
+        <h1>The Meaning of Life: {{$Wisdom}}</h1>
+    </body>
+</html>
