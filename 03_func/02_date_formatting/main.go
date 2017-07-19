@@ -26,7 +26,15 @@ var fm = template.FuncMap{
 }
 
 func main() {
-	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", time.Now())
+
+	// create a new file
+	nf, err := os.Create("index.html")
+	if err != nil {
+		log.Println(err)
+	}
+
+	// let's not print to terminal but instead create an actual webpage!
+	err = tpl.ExecuteTemplate(nf, "tpl.gohtml", time.Now())
 	if err != nil {
 		log.Fatalln(err)
 	}
