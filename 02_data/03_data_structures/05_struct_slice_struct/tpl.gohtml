@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wisdom & Transport</title>
+</head>
+<body>
+
+<ul>
+    <!-- range over slice of sages first (identified by field Wisdom) -->
+    {{range .Wisdom}}
+    <li>{{.Name}} - {{.Motto}}</li>
+    {{end}}
+</ul>
+
+<ul>
+    <!-- now range over slice of cars (identified by field Transport) -->
+    {{range .Transport}}
+    <li>{{.Manufacturer}} - {{.Model}} - {{.Doors}}</li>
+    {{end}}
+</ul>
+
+</body>
+</html>
