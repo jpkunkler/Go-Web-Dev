@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    {{.}}  
+    {{. | fdbl}}
+
+    <!--we take our data and send it down the pipeline!  -->
+    <!--first: double, then take the result of double and square it  -->
+    {{. | fdbl | fsq}}
+
+    <!--include another step!  -->
+    {{. | fdbl | fsq | fsqr}}
+
+    </body>
+</html>
