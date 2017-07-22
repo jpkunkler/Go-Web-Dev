@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	li, err := net.Listen("tcp", ":8080") // Listeon on TCP Protocoll and port 8080
+	li, err := net.Listen("tcp", ":8080") // Listen on TCP Protocol and port 8080
 	if err != nil {
 		log.Panic(err)
 	}
