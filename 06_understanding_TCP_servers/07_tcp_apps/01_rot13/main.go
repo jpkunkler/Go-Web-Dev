@@ -20,13 +20,13 @@ func main() {
 		if err != nil {
 			log.Println(err)
 		}
-		defer conn.Close()
-
 		go handle(conn)
 	}
 }
 
 func handle(conn net.Conn) {
+	defer conn.Close()
+	
 	scanner := bufio.NewScanner(conn)
 	for scanner.Scan() {
 		ln := strings.ToLower(scanner.Text())
