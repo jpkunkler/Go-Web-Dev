@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Type Submit</title>
+</head>
+<body>
+
+<!-- Only execute this if we have data! -->
+{{if .}}
+<main>
+    <p><strong>variable names</strong> (identifiers) and <em>values</em>:</p>
+    <!-- range over our data of type map[string][]string -->
+    {{range $key, $value := .}}
+            <!-- key will simply be the map key -->
+            <p><strong>{{$key}}</strong></p>
+            <!-- since our value is a slice of string, we range over it -->
+            <ul>{{range $value}}
+                <!-- then print each single value as a list item -->
+                <li><em>{{.}}</em></li>
+                {{end}}
+            </ul>
+    {{end}}
+</main>
+{{end}}
+
+<!-- we are using the POST method right here in our form -->
+<!-- action="/?fname=James" inserts another value into the variable fname. ONLY VISIBLE USING req.ParseForm! -->
+<form action="/?fname=James" method="POST">
+        <input type="text" name="fname" placeholder="first name" autofocus autocomplete="off">
+        <input type="submit" name="submit-btn" value="Click here to submit!">
+</form>
+
+</body>
+</html>
